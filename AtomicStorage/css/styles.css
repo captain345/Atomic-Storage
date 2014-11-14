@@ -1,0 +1,72 @@
+
+.btn{
+    background: gray;
+    color: #ffffff;
+}
+
+.btn-info{
+    border-color: #000000;
+}
+.btn:hover {
+    border-color: #080808;
+    background-color: darkgrey;
+
+}
+
+.jumbotron {
+    background: #000 url(//unsplash.it/1920/1200?image=299) no-repeat center center fixed;
+    height: 500px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.jumbotron h1{
+    color: #ffffff;
+    -webkit-text-stroke: 3px black;
+
+}
+
+.jumbotron .container{
+    padding-top: 120px;
+}
+
+.jumbotron .container #padder{
+    padding-top: 40px;
+}
+
+.navbar{
+    border-color: #000000;
+
+}
+
+.loginarea{
+    padding-top:150px;
+
+}
+
+.panel-default{
+
+}
+
+.row h3{
+    color: #2a6496;
+
+}
+
+.media-middle {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.navbar{
+
+}
+.button
+
+
