@@ -5,7 +5,8 @@
  * Date: 18/12/14
  * Time: 21:59
  */
-
+ob_start();
+@session_start();
 $name = $_FILES['uploadFile']['name'];
 $tmp_name = $_FILES['uploadFile']['tmp_name'];
 $username = $_SESSION['username'];

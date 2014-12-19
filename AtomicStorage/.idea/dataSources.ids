@@ -7,12 +7,117 @@
     </database-info>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
     <schema name="" catalog="AtomicStorage"/>
-    <table name="users" schema="" catalog="AtomicStorage" type="TABLE">
+    <table name="cloudusers" schema="" catalog="AtomicStorage" type="TABLE">
       <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="Username" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="Password" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="Email" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="ID"/>
+    </table>
+  </data-source>
+  <data-source name="MySQL - StudentCloud@StudentCloud.db.11698469.hostedresource.com" uuid="04b1893d-5e50-4331-8c7c-77e01d9168eb">
+    <database-info product="MySQL" version="5.5.37-35.0-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="StudentCloud"/>
+    <table name="Activity" schema="" catalog="StudentCloud" type="TABLE">
+      <column name="activity_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="activity_type" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="detail" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="misc_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="timestamp" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="activity_id"/>
+    </table>
+    <table name="AuthAttempt" schema="" catalog="StudentCloud" type="TABLE">
+      <column name="user_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="timeAttempted" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+    </table>
+    <table name="DateModifiedRecords" schema="" catalog="StudentCloud" type="TABLE">
+      <column name="dateModified_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="dir_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="file_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="timestamp" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <primary-key name="PRIMARY" columns="dateModified_id"/>
+    </table>
+    <table name="DirectoryRecords" schema="" catalog="StudentCloud" type="TABLE">
+      <column name="dir_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="dir_name" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="dir_parent_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="LTE="/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="dir_id"/>
+    </table>
+    <table name="FileRecords" schema="" catalog="StudentCloud" type="TABLE">
+      <column name="file_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="dir_id" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12" def="Jy0xJw=="/>
+      <column name="file_name" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="file_type" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="file_ext" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="file_cache_size" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="timestamp" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="file_id"/>
+    </table>
+    <table name="PersonalDetail" schema="" catalog="StudentCloud" type="TABLE">
+      <column name="user_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="firstName" sqlType="VARCHAR" precision="35" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lastName" sqlType="VARCHAR" precision="35" scale="0" nullable="false" jdbcType="12"/>
+      <column name="primaryEmail" sqlType="VARCHAR" precision="254" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lastUpdated" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="timestamp" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="user_ID"/>
+    </table>
+    <table name="Shares" schema="" catalog="StudentCloud" type="TABLE">
+      <column name="share_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="verifiedBy" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dir_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="file_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="share_status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="timestamp" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="share_id"/>
+    </table>
+    <table name="UserAccount" schema="" catalog="StudentCloud" type="TABLE">
+      <column name="user_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="timeRegistered" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="timestamp" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="user_ID"/>
+    </table>
+    <table name="UserAuthDetail" schema="" catalog="StudentCloud" type="TABLE">
+      <column name="user_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="personalEmail" sqlType="VARCHAR" precision="254" scale="0" nullable="false" jdbcType="12"/>
+      <column name="user_password" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_password_salt" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_role" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="lastUpdated" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="timestamp" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="user_ID"/>
+      <index name="personalEmail" unique="true" columns="personalEmail"/>
+    </table>
+    <table name="WordTranslations" schema="" catalog="StudentCloud" type="TABLE">
+      <column name="wt_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="english" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="translation" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="language" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="categoryName" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="hint" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="tags" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="timestamp" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="wt_id"/>
+    </table>
+    <table name="cloudusers" schema="" catalog="StudentCloud" type="TABLE">
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="Username" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Password" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Email" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+    </table>
+    <table name="users" schema="" catalog="StudentCloud" type="TABLE">
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_email" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="user_name" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="user_password" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="user_id"/>
     </table>
   </data-source>
 </component>

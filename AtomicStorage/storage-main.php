@@ -14,7 +14,7 @@
             <script src="js/jquery-2.1.1.min.js"></script>
             <script src="js/bootstrap.js"></script>
             <script src="js/jasny-bootstrap.min.js"></script>
-            <script src="js/showHide.js"></script>
+           <!-- <script src="js/jquery.bootgrid.min.js"></script>-->
             <meta name="theme-color" content="#262626">
 
     </head>
@@ -73,23 +73,10 @@
 
             <!--<button class="btn btn-default btn-file">Start Upload<input type="submit"></button>-->
 
-            <div class="list-group">
-                <a class="list-group-item active">All Files</a>
-                <a class="list-group-item">Documents</a>
-                <a class="list-group-item">Pictures</a>
-                <a class="list-group-item">Applications</a>
-                <a class="list-group-item">Other</a>
-            </div>
+
         </div>
         <div class="col-lg-9">
-            <div class="panel panel-default">
-                <div class="panel-body text-center">
-                    Your Files
-                </div>
-                <div class="panel-footer">
-                    Panel footer
-                </div>
-            </div>
+
         </div>
     </div>
     </body>

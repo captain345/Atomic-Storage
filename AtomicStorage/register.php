@@ -5,6 +5,7 @@
  * Date: 17/12/14
  * Time: 21:15
  */
+ob_start();
 session_start();
 require_once 'dbconf.php';
 
@@ -21,12 +22,12 @@ require_once 'dbconf.php';
                 echo 'Passwords do not match';
             }
             else{
-                $userCheck = mysql_query("SELECT Username FROM users WHERE Username='$username'");
+                $userCheck = mysql_query("SELECT Username FROM cloudusers WHERE Username='$username'");
                 if(mysql_num_rows($userCheck)){
                     echo 'username already exists';
                 }
                 else{
-                    $result = mysql_query("INSERT INTO users (Username, Password) VALUES('$username','$password')");
+                    $result = mysql_query("INSERT INTO cloudusers (Username, Password) VALUES('$username','$password')");
 
                     $location = 'uploads/'.$username;
                     mkdir($location, 0644);

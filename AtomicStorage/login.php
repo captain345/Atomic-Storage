@@ -6,6 +6,7 @@
  * Time: 20:45
  */
 
+ob_start();
 session_start();
 require_once 'dbconf.php';
 
@@ -18,13 +19,12 @@ function userLogin($username,$password){
     if(isset($_POST['loginB'])){
         $safe_username = mysql_real_escape_string($username);
 
-        $query = "SELECT * FROM users WHERE Username ='{$safe_username}'";
+        $query = "SELECT * FROM cloudusers WHERE Username ='{$safe_username}'";
 
         $result = mysql_query($query);
 
         if($row = mysql_fetch_assoc($result)){
             $set_password = $row['Password'];
-            //$input_password = crypt($password,$set_password);
 
             if($password == $set_password){
                 session_regenerate_id();
@@ -41,10 +41,4 @@ function userLogin($username,$password){
     }
 }
 
-function userLogout(){
-    if(isset($_POST['logout'])){
-        session_start();
-        session_destroy();
-    }
-}
 

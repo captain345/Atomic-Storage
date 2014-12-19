@@ -7,6 +7,12 @@
       <schema-pattern>AtomicStorage.*</schema-pattern>
       <default-schemas>AtomicStorage.*</default-schemas>
     </data-source>
+    <data-source name="MySQL - StudentCloud@StudentCloud.db.11698469.hostedresource.com" uuid="04b1893d-5e50-4331-8c7c-77e01d9168eb">
+      <secret-storage>master_key</secret-storage>
+      <user-name>StudentCloud</user-name>
+      <schema-pattern>StudentCloud.*</schema-pattern>
+      <default-schemas>StudentCloud.*</default-schemas>
+    </data-source>
   </component>
 </project>
 
