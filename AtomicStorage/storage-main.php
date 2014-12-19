@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head lang="en">
@@ -8,9 +9,12 @@
 
             <link href = "css/bootstrap.min.css" rel="stylesheet">
             <link href = "css/styles.css" rel="stylesheet">
+            <link href = "css/jasny-bootstrap.min.css" rel="stylesheet">
 
             <script src="js/jquery-2.1.1.min.js"></script>
             <script src="js/bootstrap.js"></script>
+            <script src="js/jasny-bootstrap.min.js"></script>
+            <script src="js/showHide.js"></script>
             <meta name="theme-color" content="#262626">
 
     </head>
@@ -40,16 +44,16 @@
 
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Options <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Option 1</a></li>
+                        <li><a href="storage-main.php">File storage Testing</a></li>
                         <li><a href="#">Option 2</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Sign In</a></li>
+                <li><a href="login.html">Sign In</a></li>
             </ul>
         </div>
     </div>
@@ -57,47 +61,36 @@
     <!-- Start coding under here once you've copied the file-->
 
     <div class="container">
-        <div class="row">
-            <div class="col-lg-11">
-                <div>
-                    <ol class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Library</a></li>
-                        <li class="active">Data</li>
-                    </ol>
-                </div>
+        <div class="col-lg-3">
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+                <form action="storage-main.php" method="POST" enctype="multipart/form-data">
+                    <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" value="upload file" name="uploadFile"></span>
+                    <span class="fileinput-filename"></span>
+                    <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+                    <button class="btn btn-default btn-file">Start Upload<input type="submit" name="submit" value="upload"></button>
+                </form>
             </div>
-            <div class="col-md-3">
-                <div class="container">
-                    <div class="btn-group text-center">
-                        <button type="button" class="btn">Action</button>
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                            <span class="caret"></span>
-                            <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </div>
-                </div>
+
+            <!--<button class="btn btn-default btn-file">Start Upload<input type="submit"></button>-->
+
+            <div class="list-group">
+                <a class="list-group-item active">All Files</a>
+                <a class="list-group-item">Documents</a>
+                <a class="list-group-item">Pictures</a>
+                <a class="list-group-item">Applications</a>
+                <a class="list-group-item">Other</a>
             </div>
-            <div class="col-md-3">
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">Option 1</a>
-                    <a href="#" class="list-group-item">Option 2</a>
-                    <a href="#" class="list-group-item">Option 3</a>
-                    <a href="#" class="list-group-item">Option 4</a>
-                    <a href="#" class="list-group-item">Option 5</a>
+        </div>
+        <div class="col-lg-9">
+            <div class="panel panel-default">
+                <div class="panel-body text-center">
+                    Your Files
+                </div>
+                <div class="panel-footer">
+                    Panel footer
                 </div>
             </div>
         </div>
     </div>
-
-
-
     </body>
 </html>

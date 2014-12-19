@@ -40,7 +40,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Options <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Option 1</a></li>
+                        <li><a href="storage-main.php">File storage Testing</a></li>
                         <li><a href="#">Option 2</a></li>
                     </ul>
                 </li>
@@ -66,10 +66,10 @@
                                 <h3 class="panel-title">Please sign in</h3>
                             </div>
                             <div class="panel-body">
-                                <form accept-charset="UTF-8" role="form">
+                                <form action="login.php" method="post" accept-charset="UTF-8" role="form">
                                     <fieldset>
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Enter E-mail" name="email" type="text">
+                                            <input class="form-control" placeholder="Enter username" name="name" type="text">
                                         </div>
                                         <div class="form-group">
                                             <input class="form-control" placeholder="Enter Password" name="password" type="password" value="">
@@ -79,7 +79,7 @@
                                                 <input name="remember" type="checkbox" value="Remember Me"> Remember Me
                                             </label>
                                         </div>
-                                        <input class="btn btn-lg btn-block" type="submit" value="Login">
+                                        <input class="btn btn-lg btn-block" name="loginB" type="submit" value="Login">
                                         <a href="register.html" role="button" type="submit" class="btn btn-lg btn-block">Register</a>
 
                                     </fieldset>
